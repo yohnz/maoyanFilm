@@ -7,12 +7,12 @@ import React, {
     Navigator
 } from 'react-native';
 
-import Main from "./utils/pageNav";
+import FilmList from "./utils/filmList";
 import CinemaList from "./utils/cinemaList";
 import User from "./utils/user";
 import TabBarItem from "./utils/TabBarItem";
 
-console.log(Main)
+
 var _getRandomRoute = function (str) {
     return {
         randNumber: str,
@@ -39,9 +39,9 @@ class film extends Component {
         return (
             <Navigator
                 initialRoute={ROUTE_STACK[routeIndex]}
-                // configureScene={(route) => {
-                //     return Navigator.SceneConfigs.FadeAndroid;
-                // } }
+                configureScene={(route) => {
+                    return Navigator.SceneConfigs.FadeAndroid;
+                } }
                 renderScene={this.renderScene}
                 navigationBar={
                     this.TabBar()
@@ -55,9 +55,9 @@ class film extends Component {
     }
     renderScene(route, navigator){       
         var pages =[
-            <Main {...route.params} />,
-            <CinemaList {...route.params}  />,
-            <User {...route.params}  />,
+            <FilmList {...route.params} navigator={navigator} />,
+            <CinemaList {...route.params} navigator={navigator} />,
+            <User {...route.params} navigator={navigator} />,
         ]
        return (
            pages[routeIndex]
@@ -99,7 +99,7 @@ class film extends Component {
     }
     onTabIndex(_index){        
         routeIndex = _index;
-        // this._navigator.jumpTo(ROUTE_STACK[routeIndex]);
+        this._navigator.jumpTo(ROUTE_STACK[routeIndex]);
     }
 }
 

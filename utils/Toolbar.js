@@ -39,7 +39,7 @@ var styles = StyleSheet.create({
         height: 40,
         backgroundColor: "#e54847",
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
 
     backIcon: {
