@@ -33,6 +33,20 @@ export default class Toolbar extends Component {
     }
 }
 
+class ToolbarHome extends Component {
+    render() {
+        return (
+            <ToolbarAndroid
+                logo={require('../images/logo.png') }
+                title=""
+                style={styles.toolbar}
+                />
+        )
+    }
+}
+
+export {ToolbarHome};
+
 var styles = StyleSheet.create({
     
     toolbar: {        

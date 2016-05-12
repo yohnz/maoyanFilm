@@ -8,7 +8,7 @@ import React, {
 } from 'react-native';
 
 import Main from "./utils/pageNav";
-import CinemaList from "./utils/cinemaList";
+import CinemaNav from "./utils/cinemaNav";
 import User from "./utils/user";
 import TabBarItem from "./utils/TabBarItem";
 
@@ -20,8 +20,8 @@ var _getRandomRoute = function (str) {
 } 
 
 var ROUTE_STACK = [
-    _getRandomRoute('FilmList'),
-    _getRandomRoute('Cinema'),
+    _getRandomRoute('Main'),
+    _getRandomRoute('CinemaNav'),
     _getRandomRoute('User'),
 ];
 
@@ -56,7 +56,7 @@ class film extends Component {
     renderScene(route, navigator){       
         var pages =[
             <Main {...route.params} />,
-            <CinemaList {...route.params}  />,
+            <CinemaNav {...route.params}  />,
             <User {...route.params}  />,
         ]
        return (
