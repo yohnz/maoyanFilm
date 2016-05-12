@@ -27,7 +27,7 @@ export default class TabBar extends Component {
         }
         return (
             <TouchableHighlight
-                style={{flex:1}}
+                style={{flex:1,borderTopWidth:1,borderColor:"#eee"}}
                 underlayColor="#B5B5B5"
                 onPress={this.props.onPress}>
                 <View style={styles.item}>
@@ -44,6 +44,7 @@ var styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         flex: 1
+      
     },
     appContainer: {
         //flex: 1,
