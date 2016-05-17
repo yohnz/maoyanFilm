@@ -26,8 +26,7 @@ export default class TabBar extends Component {
             )
         }
         return (
-            <TouchableHighlight
-                style={{flex:1,borderTopWidth:1,borderColor:"#eee"}}
+            <TouchableHighlight style={styles.tabNav}              
                 underlayColor="#B5B5B5"
                 onPress={this.props.onPress}>
                 <View style={styles.item}>
@@ -46,32 +45,17 @@ var styles = StyleSheet.create({
         flex: 1
       
     },
-    appContainer: {
-        //flex: 1,
-        overflow: 'hidden',
-        backgroundColor: '#dddddd',
+    tabNav:{
+        flex:1,
+        backgroundColor:"#fff"
     },
+   
     item: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    tabs: {
-        height: 50,
-        backgroundColor: '#F888FF'
-    },
-    messageText: {
-        fontSize: 12,
-        fontWeight: '500',
-        padding: 15,
-        marginTop: 50,
-        marginLeft: 15,
-    },
-    scene: {
-        flex: 1,
-        paddingTop: 20,
-        backgroundColor: '#EAEAEA',
-    },
+    },  
+   
     image: {
         width: 20,
         height: 20,

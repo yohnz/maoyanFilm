@@ -62,7 +62,6 @@ export default class moreComment extends Component {
                         renderRow={this.renderComments}
                         style={styles.commentRows}
                         onEndReached={this.loadMore.bind(this)}
-                        initialListSize="10"
                         />
                 </View>
             </View>
