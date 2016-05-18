@@ -9,7 +9,8 @@ import React, {
     Image,
     TouchableOpacity,
     WebView,
-    ScrollView
+    ScrollView,
+    Platform
 } from 'react-native';
 
 // toolbar
@@ -19,8 +20,8 @@ export default class Toolbar extends Component {
     }
     render() {
         return (
-            <View style={styles.toolbar}>
-                <TouchableOpacity style={styles.backView} onPress={this.back.bind(this)} >
+            <View style={Platform.OS === 'ios' ? styles.toolbarIos : styles.toolbar}>
+                <TouchableOpacity style={styles.backView} onPress={this.back.bind(this) } >
                     <View style={styles.backIcon} ></View>
                     <Text style={styles.backText}>返回</Text>
                 </TouchableOpacity>
@@ -36,11 +37,9 @@ export default class Toolbar extends Component {
 class ToolbarHome extends Component {
     render() {
         return (
-            <ToolbarAndroid
-                logo={require('../images/logo.png') }
-                title=""
-                style={styles.toolbar}
-                />
+            <View style={Platform.OS === 'ios' ? styles.toolbarIos : styles.toolbar}>                
+                <Image source={require("../images/logo.png") } style={styles.logo}></Image>
+            </View>
         )
     }
 }
@@ -48,14 +47,25 @@ class ToolbarHome extends Component {
 export {ToolbarHome};
 
 var styles = StyleSheet.create({
-    
-    toolbar: {        
+
+    toolbar: {
         height: 40,
         backgroundColor: "#e54847",
         alignItems: 'center',
         flexDirection: 'row',
     },
-
+    toolbarIos: {
+        height: 40,
+        backgroundColor: "#e54847",
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginTop:30
+    },
+    logo:{
+        width:30,
+        height:30,
+        marginLeft:10
+    },
     backIcon: {
         borderLeftWidth: 1,
         borderTopWidth: 1,
@@ -64,17 +74,17 @@ var styles = StyleSheet.create({
         borderColor: "#fff",
         marginLeft: 20,
         transform: [{ rotate: "-45deg" }]
-    },    
+    },
     title: {
         flex: 1,
         color: "#fff",
         textAlign: "center",
     },
-    backText:{
-        color:"#fff"
+    backText: {
+        color: "#fff"
     },
-    backView:{
-        flexDirection:'row',
-        alignItems:'center'
+    backView: {
+        flexDirection: 'row',
+        alignItems: 'center'
     }
 })
