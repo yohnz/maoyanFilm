@@ -10,14 +10,6 @@ import React, {
     View,
 } from 'react-native';
 
-import Index from "./main";
-
-class film extends Component {
-    render() {
-        return (
-            <Index />
-        );
-    }
-}
+import film from "./main"
 
 AppRegistry.registerComponent('film', () => film);
