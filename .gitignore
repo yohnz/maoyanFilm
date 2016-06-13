@@ -32,9 +32,3 @@ local.properties
 #
 node_modules/
 npm-debug.log
-
-filmList.js
-filmInfo.js
-cinemaList.js
-cinemaDetail.js
-moreComment.js
