@@ -9,7 +9,6 @@ import React, {
 } from 'react-native';
 
 import CinemaList from "./cinemaList";
-// import CinemaList from "./utils/cinemaList.js";
 
 export default class main extends Component {
   render() {
