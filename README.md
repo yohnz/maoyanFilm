@@ -42,7 +42,7 @@
 
 (录制于原生安卓模拟器,真机效果会更流畅)
 
-![](http://yunl.sinaapp.com/images/filmApp.gif)
+![](http://7xn0vc.com1.z0.glb.clouddn.com/image/demo.gif)
 
 ## IOS截图：
 ![](./images/1.png)
